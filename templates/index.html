@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Redundancy System</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            margin: 0;
+        }
+
+        .container {
+            width: 450px;
+            margin: 100px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .box {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .unique {
+            background: #d4edda;
+        }
+
+        .duplicate {
+            background: #f8d7da;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>🚀 Data Redundancy System</h2>
+
+    <form method="POST">
+        <input type="text" name="data" placeholder="Enter data..." required>
+        <br>
+        <button type="submit">Process</button>
+    </form>
+
+    {% if unique %}
+        <div class="box unique">
+            <strong>✅ Unique Data:</strong>
+            <p>{{ unique }}</p>
+        </div>
+    {% endif %}
+
+    {% if duplicates %}
+        <div class="box duplicate">
+            <strong>❌ Duplicate Data:</strong>
+            <p>{{ duplicates }}</p>
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
